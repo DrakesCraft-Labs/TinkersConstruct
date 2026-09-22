@@ -1,43 +1,46 @@
-# [Tinkers' Construct](https://slimeknights.github.io/projects/#tinkers-construct)
+# Tinkers' Construct — DrakesCraft 1.21.11 port
 
-Tinkers' Construct is a mod about putting tools together in a wide variety of ways, then modifying them until they turn into something else. The tools never disappear and can be named and changed to your heart's desire. Once you make them, they're yours forever. Many different materials can be used to make your tools. Tools can be forged in the part builder, or by melting down metals in the multiblock smeltery.
+<p align="center">
+  <img src="banner.svg" alt="Tinkers' Construct — DrakesCraft port for Minecraft 1.21.11" width="100%">
+</p>
 
-## Documentation
+> **Work in progress.** This repository is an unofficial DrakesCraft-led porting workspace based on SlimeKnights' Tinkers' Construct. It is not a playable or release-ready 1.21.11 build yet. Do not install artifacts from this branch on a server.
 
-For documentation on writing addons or working with Tinkers' Consrtuct datapacks, see the pages on the SlimeKnight's Github.io pages: https://slimeknights.github.io/docs/.
+The aim is to port Tinkers' Construct to **Minecraft 1.21.11 on NeoForge**, preserve its gameplay and save compatibility where technically possible, and make the Mantle packaging decision explicit and testable.
 
-For a gameplay overview, see https://slimeknights.github.io/docs/gameplay/tinkers-construct-3/.
+## Port status
 
-## Setting up a Workspace/Compiling from Source
+| Area | Status |
+| --- | --- |
+| DrakesCraft organization fork | Created from `SlimeKnights/TinkersConstruct` |
+| 1.21.11 / NeoForge build bootstrap | Initial workspace configuration |
+| Existing Tinkers source migration | Not complete |
+| Mantle 1.21.11 port | Required; current DrakesCraft Mantle line targets an earlier 1.21 release |
+| Tinkers + Mantle shaded/integrated artifact | Design and license/classloader validation pending |
+| Playable build, tests, release | Not available |
 
-Note: Git MUST be installed and in the system path to use our scripts.
-* Setup: Import Tinkers' Construct as a Gradle project into IDEA. Let it run setup.
-* Run: Run the `gradlew genIntellijRuns` through IDEA.
-* Build: Run `gradlew build`.
-* If obscure Gradle issues are found try running `gradlew clean` and `gradlew cleanCache`
+See [PORTING_1.21.11.md](PORTING_1.21.11.md) for the phased route, acceptance gates, and Mantle packaging analysis.
 
-## Issue reporting
-Please include the following:
+## Development setup
 
-* Minecraft version
-* Tinkers' Construct version
-* Forge version/build
-* Versions of any mods potentially related to the issue 
-* Any relevant screenshots are greatly appreciated.
-* For crashes:
-	* Steps to reproduce
-	* latest.log (the FML log) from the root folder of the client
+- JDK 21
+- Gradle wrapper (Gradle 9.2.1)
+- NeoForge 21.11.45 / Minecraft 1.21.11 workspace
 
-## Licenses
-Code, Textures and binaries are licensed under the [MIT License](https://tldrlegal.com/license/mit-license).
+```sh
+./gradlew tasks
+```
 
-You are allowed to use the mod in your modpack.
-Any modpack which uses Tinkers' Construct takes **full** responsibility for user support queries. For anyone else, we only support official builds from the main CI server, not custom built jars. We also do not take bug reports for outdated builds of Minecraft.
+The first NeoForge setup may need to download and prepare Minecraft artifacts. A successful `tasks`/configuration run only validates the build bootstrap; it does **not** mean the mod source has been ported. Do not treat this branch as buildable gameplay until `compileJava`, tests, client/server smoke tests, and migration checks pass.
 
-If you have queries about any license or the above support restrictions, please join [our Discord](https://discord.com/invite/njGrvuh) or reach out via the links on https://slimeknights.github.io/about/.
+## Upstream and license
 
-Any alternate licenses are noted where appropriate.
+This work is derived from [SlimeKnights/TinkersConstruct](https://github.com/SlimeKnights/TinkersConstruct), authored and maintained upstream by SlimeKnights. The upstream project is MIT-licensed; retain its copyright and license notices in redistributed copies and substantial portions. This fork is unofficial and is not endorsed by SlimeKnights.
 
-## Jar Signing
+Upstream project: [Tinkers' Construct](https://github.com/SlimeKnights/TinkersConstruct) · [Mantle](https://github.com/SlimeKnights/Mantle)
 
-Some jars from our build servers may be signed. Under no circumstances does anyone have permission to verify the signatures on those jars from other mods. The signing is for informational purposes only.
+## Scope and safety
+
+- Keep the upstream mod ID and data namespaces unchanged unless a compatibility review explicitly approves a change.
+- Do not publish a mod file or announce compatibility until the port passes the gates in the porting guide.
+- No production server deployment is part of this repository task.

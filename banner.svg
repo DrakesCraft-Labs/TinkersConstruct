@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="360" viewBox="0 0 1500 360" role="img" aria-labelledby="title desc">
+  <title id="title">Tinkers' Construct — DrakesCraft 1.21.11 port</title>
+  <desc id="desc">An anvil, hammer, and molten-gold geometric forge banner for the unofficial DrakesCraft porting project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171329"/>
+      <stop offset=".56" stop-color="#29213e"/>
+      <stop offset="1" stop-color="#111a1b"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0ad"/>
+      <stop offset=".48" stop-color="#dba94f"/>
+      <stop offset="1" stop-color="#8e6030"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#52e2cf"/>
+      <stop offset="1" stop-color="#7aa9ff"/>
+    </linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#b7a4e8" stroke-opacity=".075" stroke-width="1"/>
+      <circle cx="0" cy="0" r="2" fill="#6ce4d1" fill-opacity=".3"/>
+    </pattern>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1500" height="360" rx="24" fill="url(#bg)"/>
+  <rect width="1500" height="360" rx="24" fill="url(#grid)"/>
+  <path d="M0 298 260 178l180 66 198-104 191 96 208-133 463 197v60H0Z" fill="#0b1117" fill-opacity=".62"/>
+  <path d="M0 300 260 180l180 66 198-104 191 96 208-133 463 197" fill="none" stroke="url(#teal)" stroke-opacity=".3" stroke-width="2"/>
+  <g transform="translate(110 77)" stroke-linejoin="round">
+    <path d="m14 123 35-15h154l36 16-14 25H32Z" fill="#222b32" stroke="#9ba7a8" stroke-width="4"/>
+    <path d="m36 149h183l-17 54H57Z" fill="#38444a" stroke="#c2c3b1" stroke-width="4"/>
+    <path d="m65 203h126l22 18H42Z" fill="#1a2228" stroke="#829393" stroke-width="4"/>
+    <path d="m119 18 42 23-24 46-45-25Z" fill="url(#gold)" stroke="#fff0ad" stroke-width="4" filter="url(#glow)"/>
+    <path d="m142 54 44 28" stroke="#d5a74a" stroke-width="13" stroke-linecap="round"/>
+    <path d="m81 22 57 31-20 37-57-32Z" fill="#56436d" stroke="#c7a6e8" stroke-width="4"/>
+    <path d="m91 114 17 14m39-14 17 14m-61 48 11 9m38-9 11 9" stroke="#55dec9" stroke-width="5" opacity=".85"/>
+    <path d="m20 98 7-15m209 6 9-17m-23 124 10-8" stroke="#e1b557" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" fill="#f4f0e7">
+    <text x="490" y="143" font-size="51" font-weight="800" letter-spacing="1.5">TINKERS' CONSTRUCT</text>
+    <rect x="492" y="167" width="470" height="3" rx="2" fill="url(#teal)"/>
+    <text x="492" y="211" font-size="24" font-weight="600" fill="#d8c58f">DRAKESCRAFT · UNOFFICIAL PORTING PROJECT</text>
+    <text x="492" y="255" font-size="20" fill="#b8b5c5">Minecraft 1.21.11  <tspan fill="#5be0cb">/</tspan>  NeoForge</text>
+  </g>
+  <g transform="translate(1250 92)">
+    <path d="M0 25 25 0h157v108H25L0 83Z" fill="#151c24" stroke="#d1a452" stroke-width="2"/>
+    <text x="89" y="48" fill="#6be0ce" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="2">PORT TARGET</text>
+    <text x="89" y="80" fill="#f5e6bb" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="800" text-anchor="middle">1.21.11</text>
+  </g>
+  <path d="M30 326H1470" stroke="#d9b35b" stroke-opacity=".45" stroke-width="2"/>
+</svg>

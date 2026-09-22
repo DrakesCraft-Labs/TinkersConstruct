@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Tinkers' Construct — DrakesCraft</title>
+  <desc id="desc">A stylized hammer over an anvil, framed by a warm forge glow.</desc>
+  <defs>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#211831"/>
+      <stop offset="1" stop-color="#101b20"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#e2e1d3"/>
+      <stop offset=".48" stop-color="#87989b"/>
+      <stop offset="1" stop-color="#45535d"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1af"/>
+      <stop offset=".5" stop-color="#e0ad50"/>
+      <stop offset="1" stop-color="#98622c"/>
+    </linearGradient>
+    <radialGradient id="forge">
+      <stop offset="0" stop-color="#41d9c5" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#41d9c5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#field)"/>
+  <circle cx="256" cy="248" r="210" fill="url(#forge)"/>
+  <rect x="16" y="16" width="480" height="480" rx="100" fill="none" stroke="#c49a4f" stroke-opacity=".75" stroke-width="5"/>
+  <path d="M105 269 171 240h172l65 29-26 43H137Z" fill="#263039" stroke="#b4c1b9" stroke-width="10" stroke-linejoin="round"/>
+  <path d="m137 312h266l-29 82H169Z" fill="url(#steel)" stroke="#d1d2c4" stroke-width="9" stroke-linejoin="round"/>
+  <path d="m184 394h171l36 31H149Z" fill="#35434a" stroke="#a5b0ab" stroke-width="8" stroke-linejoin="round"/>
+  <path d="m249 84 68 38-41 75-70-39Z" fill="url(#gold)" stroke="#fff0ad" stroke-width="9" stroke-linejoin="round" filter="url(#soft-glow)"/>
+  <path d="m280 146 91 55" stroke="#bd8540" stroke-width="27" stroke-linecap="round"/>
+  <path d="m204 83 90 48-31 59-91-50Z" fill="#59466f" stroke="#c6a6e7" stroke-width="8" stroke-linejoin="round"/>
+  <path d="m221 227 25 16m62-16 25 16m-95 58 17 12m65-12 17 12" stroke="#59dfcd" stroke-width="9" stroke-linecap="round" opacity=".9"/>
+  <path d="m119 221 13-25m250 28 15-25m-33 184 18-13" stroke="#e4b558" stroke-width="9" stroke-linecap="round"/>
+</svg>

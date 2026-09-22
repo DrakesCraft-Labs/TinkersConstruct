@@ -4,6 +4,8 @@
   <img src="banner.svg" alt="Tinkers' Construct — DrakesCraft port for Minecraft 1.21.11" width="100%">
 </p>
 
+**Modrinth icon:** [`modrinth-icon.svg`](modrinth-icon.svg) · **Animated banner:** [`banner.svg`](banner.svg)
+
 > **Work in progress.** This repository is an unofficial DrakesCraft-led porting workspace based on SlimeKnights' Tinkers' Construct. It is not a playable or release-ready 1.21.11 build yet. Do not install artifacts from this branch on a server.
 
 The aim is to port Tinkers' Construct to **Minecraft 1.21.11 on NeoForge**, preserve its gameplay and save compatibility where technically possible, and make the Mantle packaging decision explicit and testable.
@@ -35,7 +37,7 @@ The first NeoForge setup may need to download and prepare Minecraft artifacts. A
 
 ## Upstream and license
 
-This work is derived from [SlimeKnights/TinkersConstruct](https://github.com/SlimeKnights/TinkersConstruct), authored and maintained upstream by SlimeKnights. The upstream project is MIT-licensed; retain its copyright and license notices in redistributed copies and substantial portions. This fork is unofficial and is not endorsed by SlimeKnights.
+This work is derived from [SlimeKnights/TinkersConstruct](https://github.com/SlimeKnights/TinkersConstruct), authored and maintained upstream by SlimeKnights. The upstream project is MIT-licensed; retain its copyright and license notices in redistributed copies and substantial portions. The new `banner.svg` and `modrinth-icon.svg` artwork in this fork is also provided under MIT; its attribution is added without removing the upstream notice. This fork is unofficial and is not endorsed by SlimeKnights.
 
 Upstream project: [Tinkers' Construct](https://github.com/SlimeKnights/TinkersConstruct) · [Mantle](https://github.com/SlimeKnights/Mantle)
 

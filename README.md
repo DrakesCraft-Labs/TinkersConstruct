@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">Tinkers' Construct · DrakesCraft Port</h1>
-<p align="center"><b>Una nueva forja para Minecraft 1.21.11</b><br>An unofficial NeoForge porting project based on the original work by SlimeKnights.</p>
+<p align="center"><b>A new forge for Minecraft 1.21.11</b><br>An unofficial NeoForge porting project based on the original work by SlimeKnights.</p>
 
 <p align="center">
   <img alt="Minecraft 1.21.11" src="https://img.shields.io/badge/Minecraft-1.21.11-55d9c8?style=for-the-badge&labelColor=191629">

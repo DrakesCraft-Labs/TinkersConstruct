@@ -29,7 +29,7 @@ Please include the following:
 	* latest.log (the FML log) from the root folder of the client
 
 ## Licenses
-Code, Textures and binaries are licensed under the [MIT License](https://tldrlegal.com/license/mit-license).
+This unofficial port is licensed under the [GNU General Public License, version 3](https://www.gnu.org/licenses/gpl-3.0.html) (GPL-3.0). Copyright (C) 2026 Chagui68. The upstream Tinkers' Construct codebase is Copyright (c) 2022 SlimeKnights and was originally licensed under the [MIT License](https://tldrlegal.com/license/mit-license). The full license text is in the [LICENSE](LICENSE) file.
 
 You are allowed to use the mod in your modpack.
 Any modpack which uses Tinkers' Construct takes **full** responsibility for user support queries. For anyone else, we only support official builds from the main CI server, not custom built jars. We also do not take bug reports for outdated builds of Minecraft.

@@ -22,6 +22,7 @@ sourceSets.main.resources {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven { url = 'https://maven.blamejared.com' }
 }
@@ -44,16 +45,13 @@ runs {
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
+    implementation "slimeknights.mantle:Mantle:1.21.1-1.12.0.DEV.1d186135"
     compileOnly "org.projectlombok:lombok:${lombok_version}"
     annotationProcessor "org.projectlombok:lombok:${lombok_version}"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
     testImplementation 'org.mockito:mockito-inline:4.2.0'
     testImplementation 'org.assertj:assertj-core:3.21.0'
-
-    // Mantle 1.21.11 is intentionally not declared yet: the local DrakesCraft
-    // Mantle port currently targets 1.21.1, so consuming it here would be unsafe.
-    // Resolve/port Mantle first; see PORTING_1.21.11.md before removing this gate.
 }
 
 tasks.named('test', Test).configure {

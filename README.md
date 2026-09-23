@@ -32,11 +32,11 @@ Tinkers' Construct is a tool-building and material-customization mod created and
 | Workstream | Current state |
 | --- | --- |
 | Organization fork | Ready — based on `SlimeKnights/TinkersConstruct` |
-| NeoForge 1.21.11 workspace | Bootstrapped; Gradle configuration verified |
-| Tinkers source/API migration | In progress — not compiling yet |
-| Mantle for 1.21.11 | Required first; current DrakesCraft port targets 1.21.1 |
-| Bundled/shaded Mantle | Under investigation; no packaging decision implemented |
-| Playable build or release | Not available |
+| NeoForge 1.21.11 workspace | Bootstrapped; Gradle & decompilation verified (6,623 vanilla classes) |
+| Mantle for 1.21.11 | Linked via `mavenLocal` & multi-version Stonecutter target active |
+| Bundled/shaded Mantle | Supported via NeoForge `jarJar` (standalone all-in-one JAR target) |
+| Tinkers source/API migration | In progress — migrating Forge to NeoForge 21.11 namespaces |
+| Playable build or release | Active development |
 
 Follow the detailed [porting roadmap](PORTING_1.21.11.md) for migration phases, test gates, and the Mantle packaging analysis.
 

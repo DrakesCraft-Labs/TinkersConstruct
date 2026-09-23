@@ -45,7 +45,6 @@ runs {
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
-    implementation "slimeknights.mantle:Mantle:1.21.1-1.12.0.DEV.1d186135"
     compileOnly "org.projectlombok:lombok:${lombok_version}"
     annotationProcessor "org.projectlombok:lombok:${lombok_version}"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'

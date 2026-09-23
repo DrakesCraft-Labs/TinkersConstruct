@@ -4,9 +4,9 @@ import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.netty.handler.codec.EncoderException;
-import net.minecraft.ResourceLocationException;
+import net.minecraft.IdentifierException;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import slimeknights.mantle.data.loadable.primitive.StringLoadable;
 import slimeknights.mantle.util.typed.TypedMap;
 
@@ -14,10 +14,10 @@ import javax.annotation.Nullable;
 import java.util.function.Function;
 
 /**
- * Helper to parse variants of resource locations, doubles as a loadable.
+ * Helper to parse variants of identifiers, doubles as a loadable.
  * @see ResourceId
  */
-public record IdParser<T extends ResourceLocation>(Function<String, T> constructor, String name) implements StringLoadable<T> {
+public record IdParser<T extends Identifier>(Function<String, T> constructor, String name) implements StringLoadable<T> {
   /**
    * Creates a new ID from the given string
    * @param string  String
@@ -27,7 +27,7 @@ public record IdParser<T extends ResourceLocation>(Function<String, T> construct
   public T tryParse(String string) {
     try {
       return constructor.apply(string);
-    } catch (ResourceLocationException resourcelocationexception) {
+    } catch (IdentifierException ex) {
       return null;
     }
   }
@@ -36,7 +36,7 @@ public record IdParser<T extends ResourceLocation>(Function<String, T> construct
   public T parseString(String text, String key, TypedMap context) {
     try {
       return constructor.apply(text);
-    } catch (ResourceLocationException ex) {
+    } catch (IdentifierException ex) {
       throw new JsonSyntaxException("Expected " + key + " to be a " + name + " ID, received invalid characters", ex);
     }
   }
@@ -53,7 +53,7 @@ public record IdParser<T extends ResourceLocation>(Function<String, T> construct
 
   @Override
   public void encode(FriendlyByteBuf buffer, T object) throws EncoderException {
-    buffer.writeResourceLocation(object);
+    buffer.writeIdentifier(object);
   }
 
 
@@ -79,25 +79,24 @@ public record IdParser<T extends ResourceLocation>(Function<String, T> construct
   }
 
   /**
-   * Attempts to read a resource ID from the given string reader
+   * Attempts to read an identifier from the given string reader
    * @param defaultDomain  Domain to use if the domain is unset
    * @param reader         Reader to read from
-   * @return  Resource location, or exception if invalid
+   * @return  Identifier, or exception if invalid
    * @throws CommandSyntaxException  If parsing fails
    */
-  @SuppressWarnings("removal")
-  public static ResourceLocation read(String defaultDomain, StringReader reader) throws CommandSyntaxException {
+  public static Identifier read(String defaultDomain, StringReader reader) throws CommandSyntaxException {
     int start = reader.getCursor();
-    while(reader.canRead() && ResourceLocation.isAllowedInResourceLocation(reader.peek())) {
+    while(reader.canRead() && Identifier.isAllowedInIdentifier(reader.peek())) {
       reader.skip();
     }
     String string = reader.getString().substring(start, reader.getCursor());
     String[] parts = decompose(defaultDomain, string);
     try {
-      return new ResourceLocation(parts[0], parts[1]);
-    } catch (ResourceLocationException ex) {
+      return Identifier.fromNamespaceAndPath(parts[0], parts[1]);
+    } catch (IdentifierException ex) {
       reader.setCursor(start);
-      throw ResourceLocation.ERROR_INVALID.createWithContext(reader);
+      throw Identifier.ERROR_INVALID.createWithContext(reader);
     }
   }
 }

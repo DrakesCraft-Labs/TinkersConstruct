@@ -6,10 +6,11 @@ package slimeknights.tconstruct.library.utils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -18,10 +19,9 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.ForgeI18n;
-import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.ModLoadingContext;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.neoforge.common.conditions.ICondition;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
@@ -74,7 +74,7 @@ public class Util {
    * @return  True if it can be translated
    */
   public static boolean canTranslate(String key) {
-    return !ForgeI18n.getPattern(key).equals(key);
+    return Language.getInstance().has(key);
   }
 
   /**
@@ -83,27 +83,27 @@ public class Util {
    * @param name  Object name
    * @return  Translation key
    */
-  public static String makeTranslationKey(String base, @Nullable ResourceLocation name) {
-    return net.minecraft.Util.makeDescriptionId(base, name);
+  public static String makeTranslationKey(String base, @Nullable Identifier name) {
+    return net.minecraft.util.Util.makeDescriptionId(base, name);
   }
 
   /**
-   * Makes a translatable component for the given name, using {@link #makeTranslationKey(String, ResourceLocation)}.
+   * Makes a translatable component for the given name, using {@link #makeTranslationKey(String, Identifier)}.
    * @param base       Base name, such as "block" or "gui"
    * @param name       Object name
    * @param arguments  Arguments for translated component
    * @return  Translated component
    */
-  public static Component makeTranslation(String base, @Nullable ResourceLocation name, Object... arguments) {
+  public static Component makeTranslation(String base, @Nullable Identifier name, Object... arguments) {
     return Component.translatable(makeTranslationKey(base, name), arguments);
   }
 
-  /** Same as {@link net.minecraft.Util#make(Supplier)} */
+  /** Same as {@link net.minecraft.util.Util#make(Supplier)} */
   public static <T> T make(Supplier<T> supplier) {
     return supplier.get();
   }
 
-  /** Same as {@link net.minecraft.Util#make(Object, Consumer)} */
+  /** Same as {@link net.minecraft.util.Util#make(Object, Consumer)} */
   public static <T> T make(T object, Consumer<T> consumer) {
     consumer.accept(object);
     return object;
@@ -254,19 +254,13 @@ public class Util {
     return new ClientboundBlockEntityDataPacket(be.getBlockPos(), be.getType(), tagFunction.apply(be));
   }
 
-  /** Cache of neo forge status, to make lookups faster in hot code */
-  private static Boolean IS_NEO_FORGE = null;
-
-  /** Checks if we are currently running on NeoForge as opposed to Forge. Allows branching solutions for each loader if needed */
+  /** Checks if we are currently running on NeoForge as opposed to Forge */
   public static boolean isNeo() {
-    if (IS_NEO_FORGE == null) {
-      IS_NEO_FORGE = ModList.get().getModContainerById("forge").filter(mod -> mod.getModInfo().getDisplayName().equals("NeoForge")).isPresent();
-    }
-    return IS_NEO_FORGE;
+    return true;
   }
 
-  /** Checks if we are currently running on Forge as opposed to NeoForge. Allows branching solutions for each loader if needed */
+  /** Checks if we are currently running on Forge as opposed to NeoForge */
   public static boolean isForge() {
-    return !isNeo();
+    return false;
   }
 }

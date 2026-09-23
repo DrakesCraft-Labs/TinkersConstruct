@@ -12,6 +12,15 @@ An unofficial, work-in-progress port of Tinkers' Construct for Minecraft 1.21.11
 This development branch is not a playable or release-ready build.
 '''
 
+[[mods]]
+modId="mantle"
+version="${mod_version}"
+displayName="Mantle (Integrated)"
+authors="SlimeKnights; DrakesCraft port contributors"
+description='''
+Mantle mod library integrated directly into Tinkers' Construct.
+'''
+
 [[dependencies.${mod_id}]]
 modId="neoforge"
 type="required"
@@ -24,12 +33,4 @@ modId="minecraft"
 type="required"
 versionRange="${minecraft_version_range}"
 ordering="NONE"
-side="BOTH"
-
-[[dependencies.${mod_id}]]
-modId="mantle"
-type="required"
-# Fail closed until a matching 1.21.11 Mantle build is available and validated.
-versionRange="[99.0.0,)"
-ordering="AFTER"
 side="BOTH"

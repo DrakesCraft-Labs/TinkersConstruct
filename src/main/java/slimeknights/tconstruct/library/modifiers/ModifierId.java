@@ -1,6 +1,6 @@
 package slimeknights.tconstruct.library.modifiers;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import slimeknights.mantle.data.loadable.field.ContextKey;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.library.utils.IdParser;
@@ -9,7 +9,7 @@ import slimeknights.tconstruct.library.utils.ResourceId;
 import javax.annotation.Nullable;
 
 /**
- * This is just a copy of ResourceLocation for type safety in modifier JSON.
+ * This is just a copy of Identifier for type safety in modifier JSON.
  */
 public class ModifierId extends ResourceId {
   public static final IdParser<ModifierId> PARSER = new IdParser<>(ModifierId::new, "Modifier");
@@ -29,23 +29,19 @@ public class ModifierId extends ResourceId {
     super(namespaceIn, pathIn);
   }
 
-  public ModifierId(ResourceLocation location) {
+  public ModifierId(Identifier location) {
     super(location);
-  }
-
-  private ModifierId(String namespace, String path, @Nullable Dummy pDummy) {
-    super(namespace, path, pDummy);
   }
 
   /** {@return Modifier ID, or null if invalid} */
   @Nullable
   public static ModifierId tryParse(String string) {
-    return tryParse(string, (namespace, path) -> new ModifierId(namespace, path, null));
+    return tryParse(string, ModifierId::new);
   }
 
   /** {@return Modifier ID, or null if invalid} */
   @Nullable
   public static ModifierId tryBuild(String namespace, String path) {
-    return tryBuild(namespace, path, (n, p) -> new ModifierId(namespace, path, null));
+    return tryBuild(namespace, path, ModifierId::new);
   }
 }

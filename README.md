@@ -66,10 +66,12 @@ Upstream support policies apply to official SlimeKnights builds: modpack authors
 
 JAR signatures from upstream build servers are informational only; follow the upstream project's warning not to verify signatures on its JARs using other mods.
 
-## Credits, license, and project identity
+---
 
-Tinkers' Construct is created and maintained upstream by **SlimeKnights**. This fork preserves the upstream code's MIT notice while identifying the fork's original contributions under **GPL-3.0-only** (copyright © 2026 Chagui68), as declared in `mods.toml`. The original DrakesCraft banner and Modrinth icon artwork are separately attributed and licensed under MIT terms in [`LICENSE`](LICENSE).
+## 📄 License & Upstream Attribution
 
-This is an **unofficial community project** and is not endorsed by SlimeKnights. Preserve the applicable copyright and license notices when redistributing source or assets. Public binary releases of the 1.21.11 port are not available from this work-in-progress branch.
+This project is a sovereign fork maintained by [**JackStar6677-1**](https://github.com/JackStar6677-1) under [**DrakesCraft Labs**](https://github.com/DrakesCraft-Labs).
 
-<p align="center"><sub>DrakesCraft Labs · Built on the work of SlimeKnights</sub></p>
+- **Original Project:** Created by the upstream authors and the open-source community.
+- **DrakesCraft Optimizations:** Modernized for Paper/Purpur 1.21.11+, Java 21, high concurrency, asynchronous safety, and exploit/duplication prevention.
+- **License:** Distributed under the original **GNU General Public License v3.0 (GPLv3)** (or original upstream license). See the [LICENSE](LICENSE) file for complete terms.

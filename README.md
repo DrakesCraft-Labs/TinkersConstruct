@@ -111,11 +111,10 @@ TConstruct-1.21.11.jar (Single Distribution Artifact)
 
 ---
 
-## 📜 License, Attribution & Project Identity
+## 📄 License & Upstream Attribution
 
-* **Upstream Creation:** Tinkers' Construct and Mantle are created and maintained by **SlimeKnights**. Original upstream sources and resources are released under the [MIT License](LICENSE).
-* **Port Leadership:** Maintained and ported by **JackStar6677-1** (`pablo.elias.miranda.292003@gmail.com`) for the **DrakesCraft Labs** ecosystem.
-* **Original Artwork:** The custom animated `banner.svg` and `modrinth-icon.svg` visual assets were crafted by DrakesCraft Labs and licensed under MIT.
-* **Disclaimer:** This is an independent, unofficial community port and is not affiliated with or endorsed by SlimeKnights. All original copyright notices and licenses have been strictly preserved.
+This project is a sovereign fork maintained by [**JackStar6677-1**](https://github.com/JackStar6677-1) under [**DrakesCraft Labs**](https://github.com/DrakesCraft-Labs).
 
-<p align="center"><sub>Forged with passion & precision by DrakesCraft Labs · Standing on the shoulders of SlimeKnights</sub></p>
+- **Original Project:** Created by the upstream authors and the open-source community.
+- **DrakesCraft Optimizations:** Modernized for Paper/Purpur 1.21.11+, Java 21, high concurrency, asynchronous safety, and exploit/duplication prevention.
+- **License:** Distributed under the original **GNU General Public License v3.0 (GPLv3)** (or original upstream license). See the [LICENSE](LICENSE) file for complete terms.
